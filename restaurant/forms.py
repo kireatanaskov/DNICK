@@ -8,6 +8,11 @@ class NameForm(forms.Form):
 
 
 class RestaurantForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(RestaurantForm, self).__init__(*args, **kwargs)
+        for field in self.visible_fields():
+            field.field.widget.attrs["class"] = 'form-control'
+
     class Meta:
         model = Restaurant
         fields = "__all__"

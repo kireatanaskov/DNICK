@@ -42,6 +42,7 @@ class Dish(models.Model):
     name = models.CharField(max_length=30)
     ingredients = models.TextField(blank=True, null=True)
     calories = models.IntegerField()
+    image = models.ImageField(upload_to="dishes/", blank=True, null=True)
 
     def __str__(self):
         return f"{self.name} - {self.calories}kcal"

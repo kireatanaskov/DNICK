@@ -4,6 +4,7 @@
     <h3>Dishes</h3>
     {% for d in dishes %}
         <h5>{{ d.name }}</h5>
+        <img src="{{ d.image.url }}" alt="...">
         <ul>
             <li>ingredients: {{ d.ingredients }}</li>
             {% if d.calories <= 200 %}
